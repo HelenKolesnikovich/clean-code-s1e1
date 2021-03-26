@@ -18,40 +18,41 @@
       </figcaption>
     </figure>
     <form class="centered-main-page-element" action="" method="">
-      <p id="topSectionForAddingElementToList">
-        <label for="new-task">Add Item</label>
+      <fieldset id="topSectionForAddingElementToList">
+        <legend>Add Item</legend>
         <div class="task-row-wrapper">
           <input id="new-task" class="task" type="text">
-          <button>Add</button>
+          <input type="submit" value="Add"></input>
         </div>
-      </p>
-      <h3>Todo</h3>
-      <ul id="incompleteTasks">
-        <li>
+      </fieldset>
+      <fieldset>
+        <legend>Todo</legend>
+        <div class="editMode">
+          <input type="checkbox">   <!---->
+          <!--label class="task">Pay Bills</!--label-->   <!---->
+          <input type="text" value="Pay Bills" disabled>                     <!---->
+          <input type="submit" class="edit">Edit</input>      <!---->
+          <!--button class="delete"><img src="./remove.svg"></!--button-->    <!---->
+          <input class="delete" type="image" src="./remove.svg" width="40px">
+        </div>
+        <div class="editMode">
           <input type="checkbox">
-          <label class="task">Pay Bills</label>
-          <input type="text">
-          <button class="edit">Edit</button>
-          <button class="delete"><img src="./remove.svg"></button>
-        </li>
-        <li class="editMode">
-          <input type="checkbox">
-          <label class="task">Go Shopping</label>
-          <input type="text" value="Go Shopping" class="task">
-          <button class="edit">Save</button>
-          <button class="delete"><img src="./remove.svg"></button>
-        </li>
-      </ul>
-      <h3>Completed</h3>
-      <ul id="completed-tasks">
-        <li>
+          <input class="task" type="text" placeholder="Go Shopping">
+          <input type="submit" class="edit" value="Save">
+          <input class="delete" type="image" src="./remove.svg" width="40px">
+          <!--button class="delete"><img src="./remove.svg"></!--button-->
+        </div>        
+      </fieldset>
+      <fieldset>
+        <legend>Completed</legend>
+        <div class="completed-tasks">
           <input type="checkbox" checked>
-          <label class="task">See the Doctor</label>
-          <input type="text" class="task">
-          <button class="edit">Edit</button>
-          <button class="delete"><img src="./remove.svg"></button>
-        </li>
-      </ul>
+          <input class="task" type="text" value="See the Doctor" disabled>
+          <input class="edit" type="button" value="Edit">
+          <input class="delete" type="image" src="./remove.svg" width="40px">
+          <!--button class="delete"><img src="./remove.svg"></!--button-->
+        </div>
+      </fieldset>
     </form>
     <script src="app.js"></script>
   </body>
