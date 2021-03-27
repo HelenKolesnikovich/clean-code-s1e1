@@ -10,52 +10,54 @@
     <link rel="stylesheet" href="style.css" media="screen">
   </head>
   <body>
-    <header class="title-block">
-      <h1 class="logo-hidden">eisenhower matrix</h1>
-      <figure class="aaa">
-        <img src="./eisenhower-matrix.jpg" alt="eisenhower matrix image">
-        <figcaption>
-          <a class="more_inf" 
-              href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
-        </figcaption>
-      </figure>
-    </header>
-    <main>
-      <form class="centered-main-page-element" action="#" method="get">
-        <fieldset id="topSectionForAddingElementToList">
-          <legend>Add Item</legend>
-          <div class="task-row-wrapper">
-            <input id="new-task" class="task" type="text">
-            <input type="button" value="Add">
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Todo</legend>
-          <div class="editMode">
-            <input type="checkbox">
-            <input type="text" value="Pay Bills" disabled>                   
-            <input class="edit" type="button" value="Edit">
-            <input class="delete" type="image" src="./remove.svg" alt="button to delete">
-          </div>
-          <div class="editMode">
-            <input type="checkbox">
-            <input class="task" type="text" placeholder="Go Shopping">
-            <input class="edit" type="button" value="Save">
-            <input class="delete" type="image" src="./remove.svg" alt="button to delete">
-          </div>        
-        </fieldset>
-        <fieldset>
-          <legend>Completed</legend>
-          <div class="completed-tasks">
-            <input type="checkbox" checked>
-            <input class="task" type="text" value="See the Doctor" disabled>
-            <input class="edit" type="button" value="Edit">
-            <input class="delete" type="image" src="./remove.svg" alt="button to delete">
-          </div>
-        </fieldset>
-      </form>
-    </main>
-    <footer></footer>
+    <div class="wrapper-page">
+      <header class="title-block">
+        <h1 class="logo-hidden">eisenhower matrix</h1>
+        <figure class="aaa">
+          <img src="./eisenhower-matrix.jpg" alt="eisenhower matrix image">
+          <figcaption>
+            <a class="more_inf" 
+                href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+          </figcaption>
+        </figure>
+      </header>
+      <main>
+        <form class="centered-main-page-element" action="#" method="get">
+          <fieldset id="topSectionForAddingElementToList">
+            <legend>Add Item</legend>
+            <div class="task-row-wrapper">
+              <input id="new-task" class="task" type="text">
+              <input type="button" value="Add">
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Todo</legend>
+            <div class="editMode">
+              <input type="checkbox">
+              <input type="text" value="Pay Bills" disabled>                   
+              <input class="edit" type="button" value="Edit">
+              <input class="delete" type="image" src="./remove.svg" alt="button to delete">
+            </div>
+            <div class="editMode">
+              <input type="checkbox">
+              <input class="task" type="text" placeholder="Go Shopping">
+              <input class="edit" type="button" value="Save">
+              <input class="delete" type="image" src="./remove.svg" alt="button to delete">
+            </div>        
+          </fieldset>
+          <fieldset>
+            <legend>Completed</legend>
+            <div class="completed-tasks">
+              <input type="checkbox" checked>
+              <input class="task" type="text" value="See the Doctor" disabled>
+              <input class="edit" type="button" value="Edit">
+              <input class="delete" type="image" src="./remove.svg" alt="button to delete">
+            </div>
+          </fieldset>
+        </form>
+      </main>
+      <footer></footer>
+    </div>    
     <script src="app.js"></script>
   </body>
 </html>
