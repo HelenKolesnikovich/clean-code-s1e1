@@ -5,7 +5,11 @@ body {
   font-size: 62.5%;                 /* 10px */
   color: #333;    
 }
-
+.wrapper-page {
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto;
+}
 .aaa {
   display: block;  
   margin: 0 auto;
