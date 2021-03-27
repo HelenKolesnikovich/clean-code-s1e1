@@ -22,36 +22,36 @@
         </figure>
       </header>
       <main>
-        <form class="centered-main-page-element" action="#" method="get">
-          <fieldset id="topSectionForAddingElementToList">
-            <legend>Add Item</legend>
-            <div class="task-row-wrapper">
-              <input id="new-task" class="task" type="text">
-              <input type="button" value="Add">
+        <form class="form" action="#" method="get">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Add Item</legend>
+            <div class="form__line">
+              <input class="form__input" type="text">
+              <input class="form__button" type="button" value="add">
             </div>
           </fieldset>
-          <fieldset>
-            <legend>Todo</legend>
-            <div class="editMode">
-              <input type="checkbox">
-              <input type="text" value="Pay Bills" disabled>                   
-              <input class="edit" type="button" value="Edit">
-              <input class="delete" type="image" src="./remove.svg" alt="button to delete">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Todo</legend>
+            <div class="form__line">
+              <input class="form__checkbox" type="checkbox">
+              <input class="form__input" type="text" value="Pay Bills" disabled>                   
+              <input class="form__button" type="button" value="edit">
+              <input class="form__image-button" type="image" src="./remove.svg" alt="button to delete">
             </div>
-            <div class="editMode">
-              <input type="checkbox">
-              <input class="task" type="text" placeholder="Go Shopping">
-              <input class="edit" type="button" value="Save">
-              <input class="delete" type="image" src="./remove.svg" alt="button to delete">
+            <div class="form__line">
+              <input class="form__checkbox" type="checkbox">
+              <input class="form__input" type="text" value="Go Shopping">
+              <input class="form__button" type="button" value="edit">
+              <input class="form__image-button" type="image" src="./remove.svg" alt="button to delete">
             </div>        
           </fieldset>
-          <fieldset>
-            <legend>Completed</legend>
-            <div class="completed-tasks">
-              <input type="checkbox" checked>
-              <input class="task" type="text" value="See the Doctor" disabled>
-              <input class="edit" type="button" value="Edit">
-              <input class="delete" type="image" src="./remove.svg" alt="button to delete">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Completed</legend>
+            <div class="form__line">
+              <input class="form__checkbox" type="checkbox" checked>
+              <input class="form__input form__input_completed-event" type="text" value="See the Doctor" disabled>
+              <input class="form__button" type="button" value="edit">
+              <input class="form__image-button" type="image" src="./remove.svg" alt="button to delete">
             </div>
           </fieldset>
         </form>
