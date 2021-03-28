@@ -90,18 +90,12 @@ let editTask = function(event) {
   }
 }
 
-
 //Delete task.
-var deleteTask=function(){
-    console.log("Delete Task...");
-
-    var listItem=this.parentNode;
-    var ul=listItem.parentNode;
-    //Remove the parent list item from the ul.
-    ul.removeChild(listItem);
-
+let deleteTask = function(event) {
+  let parentContainer = event.target.closest('.form__line');
+  let formSection = parentContainer.closest('.form__fieldset');
+  formSection.removeChild(parentContainer);
 }
-
 
 //Mark task completed
 var taskCompleted=function(){
