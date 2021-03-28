@@ -89,15 +89,22 @@ body {
   flex-shrink: 2;
   padding-right: .8rem;
   padding-left: .8rem;
-  border: 1px solid #ddd;
-  border-radius: .75rem;
-  background: #fff;
+  border: none;
+  background-color: #f8f8f8;
   font-size: 1.8rem;
   line-height: 1;  
   color: #888;
 }
 .form__input:focus {
+  outline: none;
+  border: 1px solid #ddd;
   color: #333;
+}
+.form__input_edit-mode {
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: .75rem;
+  background: #fff;
 }
 .form__button {
   flex-basis: 6rem;
