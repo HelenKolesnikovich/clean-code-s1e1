@@ -1,21 +1,11 @@
-//Document is the DOM can be accessed in the console with document.window.
-// Tree is from the top, html, body, p etc.
-
-//Problem: User interaction does not provide the correct results.
-//Solution: Add interactivity so the user can manage daily tasks.
-//Break things down into smaller steps and take each step at a time.
-
-
-// Event handling, user interaction is what starts the code execution.
-
-//const taskInput = document.getElementById('new-task');//Add a new task.
-let addButton = document.querySelector('#add-button');//first button
+//Some variables for key elements from the DOM-tree
+let addButton = document.querySelector('#add-button');
 let editButtonsCollection = document.querySelectorAll('.form__button');
 let deleteButtonsCollection = document.querySelectorAll('.form__image-button');
 let checkboxesCollection = document.querySelectorAll('.form__checkbox');
 
 
-//New task list item
+//Create new element for created task
 let createNewTaskElement = function(taskString) {
   let wrapperTaskElement = document.createElement('div');
   wrapperTaskElement.classList.add('form__line', 'form__line_separated');
@@ -52,6 +42,7 @@ let createNewTaskElement = function(taskString) {
   return wrapperTaskElement;
 }
 
+//Add new task
 let addTask = function(event) {
   let parentElement = event.target.closest('.form__fieldset');
   let inputArea = parentElement.querySelector('.form__input');
@@ -117,13 +108,10 @@ let changeSectionToDisplay = function(event) {
 }
 
 var ajaxRequest = function() {
-    console.log("AJAX Request");
+  console.log("AJAX Request");
 }
 
-//The glue to hold it all together.
-
-
-//Set the click handler to the form functions.
+//Set addEventListeners for key elements in DOM-tree
 addButton.onclick = addTask;
 addButton.addEventListener("click", addTask);
 addButton.addEventListener("click", ajaxRequest);
@@ -141,13 +129,3 @@ for(let i = 0; i < checkboxesCollection.length; i++)
 {
   checkboxesCollection[i].addEventListener('mousedown', changeSectionToDisplay);
 }
-
-
-
-
-
-// Issues with usability don't get seen until they are in front of a human tester.
-
-//prevent creation of empty tasks.
-
-//Change edit to save when you are in edit mode.
