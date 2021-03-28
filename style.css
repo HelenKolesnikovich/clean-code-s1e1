@@ -126,7 +126,8 @@ body {
   margin-left: 1rem;
   margin-right: 1rem;
   flex-grow: 1;
-  flex-shrink: 1;  
+  flex-shrink: 1; 
+  cursor: pointer; 
 }
 .form__image-button {
   display: block;
