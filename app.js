@@ -68,33 +68,27 @@ let addTask = function(event) {
 }
 
 //Edit an existing task.
+let editTask = function(event) {
+  let parentContainer = event.target.closest('.form__line');
+  let inputField = parentContainer.querySelector('.form__input');
 
-var editTask=function(){
-    console.log("Edit Task...");
-    console.log("Change 'edit' to 'save'");
+  if(event.target.classList.contains('isEditButton'))
+  {
+    event.target.value = 'save';
+    event.target.classList.remove('isEditButton');
 
+    inputField.classList.add('form__input_edit-mode');
+    inputField.disabled = false;
+  }
+  else
+  {
+    event.target.value = 'edit';
+    event.target.classList.add('isEditButton');
 
-    var listItem=this.parentNode;
-
-    var editInput=listItem.querySelector('input[type=text]');
-    var label=listItem.querySelector("label");
-    var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("editMode");
-    //If class of the parent is .editmode
-    if(containsClass){
-
-        //switch to .editmode
-        //label becomes the inputs value.
-        label.innerText=editInput.value;
-        editBtn.innerText="Edit";
-    }else{
-        editInput.value=label.innerText;
-        editBtn.innerText="Save";
-    }
-
-    //toggle .editmode on the parent.
-    listItem.classList.toggle("editMode");
-};
+    inputField.classList.remove('form__input_edit-mode');
+    inputField.disabled = true;
+  }
+}
 
 
 //Delete task.
