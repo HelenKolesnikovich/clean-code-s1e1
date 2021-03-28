@@ -1,6 +1,6 @@
 //Some variables for key elements from the DOM-tree
 let addButton = document.querySelector('#add-button');
-let editButtonsCollection = document.querySelectorAll('.form__button');
+let editButtonsCollection = document.querySelectorAll('.form__button-edit');
 let deleteButtonsCollection = document.querySelectorAll('.form__image-button');
 let checkboxesCollection = document.querySelectorAll('.form__checkbox');
 
