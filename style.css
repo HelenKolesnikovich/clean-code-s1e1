@@ -140,6 +140,26 @@ body {
 }
 .form__image-button:hover,
 .form__image-button:focus {
-  fill: #cf2323;
   transform: rotateZ(0);
+}
+.footer {
+  display: none;
+  width: 100%;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  background-color: #888;
+  font-size: 1.4rem;
+  color: rgb(247, 218, 218);
+  text-align: center;
+}
+.footer__author-info {
+  cursor: pointer;
+}
+.footer__author-info:hover,
+.footer__author-info:focus {
+  text-decoration: underline;
+}
+.footer__link {
+  text-decoration: none;
+  color: rgb(247, 218, 218);
 }
