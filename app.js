@@ -97,6 +97,24 @@ let deleteTask = function(event) {
   formSection.removeChild(parentContainer);
 }
 
+//Place the task in incomplete or completed sections according to the set flag in the checkbox 
+let changeSectionToDisplay = function(event) {
+  let incompleteTasksSection = document.querySelector('#incomplete-tasks');
+  let completedTasksSection = document.querySelector('#completed-tasks');
+  let parentContainer = event.target.closest('.form__line');
+  let initialTaskLocation = event.target.closest('.form__fieldset');
+
+  if(initialTaskLocation.classList.contains('form__incomplete-tasks'))
+  {
+    completedTasksSection.appendChild(parentContainer);
+    event.target.checked = true;
+  }
+  else
+  {
+    incompleteTasksSection.appendChild(parentContainer);
+    event.target.checked = false;
+  }
+}
 
 var ajaxRequest = function() {
     console.log("AJAX Request");
