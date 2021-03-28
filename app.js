@@ -167,39 +167,6 @@ for(let i = 0; i < checkboxesCollection.length; i++)
 }
 
 
-var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
-    console.log("bind list item events");
-//select ListItems children
-    var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var editButton=taskListItem.querySelector("button.edit");
-    var deleteButton=taskListItem.querySelector("button.delete");
-
-
-    //Bind editTask to edit button.
-    editButton.onclick=editTask;
-    //Bind deleteTask to delete button.
-    deleteButton.onclick=deleteTask;
-    //Bind taskCompleted to checkBoxEventHandler.
-    checkBox.onchange=checkBoxEventHandler;
-}
-
-//cycle over incompleteTaskHolder ul list items
-//for each list item
-for (var i=0; i<incompleteTaskHolder.children.length;i++){
-
-    //bind events to list items chldren(tasksCompleted)
-    bindTaskEvents(incompleteTaskHolder.children[i],taskCompleted);
-}
-
-
-
-
-//cycle over completedTasksHolder ul list items
-for (var i=0; i<completedTasksHolder.children.length;i++){
-    //bind events to list items chldren(tasksIncompleted)
-    bindTaskEvents(completedTasksHolder.children[i],taskIncomplete);
-}
-
 
 
 
