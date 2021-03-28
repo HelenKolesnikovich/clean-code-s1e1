@@ -52,20 +52,19 @@ let createNewTaskElement = function(taskString) {
   return wrapperTaskElement;
 }
 
+let addTask = function(event) {
+  let parentElement = event.target.closest('.form__fieldset');
+  let inputArea = parentElement.querySelector('.form__input');
 
+  if(!inputArea.value) 
+  { 
+    return; 
+  }
+  let newTaskElement = createNewTaskElement(inputArea.value);
+  inputArea.value = '';
 
-var addTask=function(){
-    console.log("Add Task...");
-    //Create a new list item with the text from the #new-task:
-    if (!taskInput.value) return;
-    var listItem=createNewTaskElement(taskInput.value);
-
-    //Append listItem to incompleteTaskHolder
-    incompleteTaskHolder.appendChild(listItem);
-    bindTaskEvents(listItem, taskCompleted);
-
-    taskInput.value="";
-
+  const incompleteTasksSection = document.querySelector('#incomplete-tasks');
+  incompleteTasksSection.appendChild(newTaskElement);
 }
 
 //Edit an existing task.
