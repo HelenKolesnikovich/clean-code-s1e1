@@ -51,7 +51,7 @@ let createNewTaskElement = function(taskString) {
 
 
 
-var addTask=function() {           /* add new task for Todo*/
+var addTask = function() {           /* add new task for Todo*/
   console.log("Add Task...");
   //Create a new list item with the text from the #new-task:
   if (!taskInput.value) return;
@@ -109,7 +109,6 @@ var taskCompleted = function() {
     var listItem = this.parentNode;
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
-
 }
 
 
@@ -123,8 +122,6 @@ var taskIncomplete = function() {
   bindTaskEvents(listItem,taskCompleted);
 }
 
-
-
 var ajaxRequest = function() {
   console.log('AJAX Request');
 }
@@ -134,8 +131,8 @@ var ajaxRequest = function() {
 
 //Set the click handler to the addTask function.
 addButton.onclick = addTask;
-addButton.addEventListener("click",addTask);
-addButton.addEventListener("click",ajaxRequest);
+addButton.addEventListener("click", addTask);
+addButton.addEventListener("click", ajaxRequest);
 
 
 var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
@@ -158,7 +155,7 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 //for each list item
 for (let i = 0; i < incompleteTaskHolder.children.length; i++) {
   //bind events to list items chldren(tasksCompleted)
-  bindTaskEvents(incompleteTaskHolder.children[i],taskCompleted);
+  bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
 }
 
 
