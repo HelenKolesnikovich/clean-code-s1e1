@@ -16,46 +16,40 @@ let checkboxesCollection = document.querySelectorAll('.form__checkbox');
 
 
 //New task list item
-var createNewTaskElement = function(taskString){		/*taskString == input.value*/
+let createNewTaskElement = function(taskString) {
+  let wrapperTaskElement = document.createElement('div');
+  wrapperTaskElement.classList.add('form__line', 'form__line_separated');
 
-    var listItem=document.createElement("li");
+  let checkBox = document.createElement('input');  
+  checkBox.type = 'checkbox';
+  checkBox.classList.add('form__checkbox');
+  checkBox.addEventListener('mousedown', changeSectionToDisplay);
 
-    //input (checkbox)
-    var checkBox=document.createElement("input");//checkbx
-    //label
-    var label=document.createElement("label");//label
-    //input (text)
-    var editInput=document.createElement("input");//text
-    //button.edit
-    var editButton=document.createElement("button");//edit button
+  let taskName = document.createElement('input');
+  taskName.type = 'text';
+  taskName.classList.add('form__input');
+  taskName.value = taskString;
+  taskName.disabled = true;
 
-    //button.delete
-    var deleteButton=document.createElement("button");//delete button
-    var deleteButtonImg=document.createElement("img");//delete button image
+  let editButton = document.createElement('input');
+  editButton.type = 'button';
+  editButton.classList.add('form__button', 'isEditButton');
+  editButton.value = 'edit';
+  editButton.addEventListener('click', editTask);
 
-    label.innerText=taskString;
-    label.className='task';
+  let deleteButton = document.createElement('input');
+  deleteButton.type = 'image';
+  deleteButton.alt = 'button to delete';
+  deleteButton.src = './remove.svg';
+  deleteButton.classList.add('form__image-button');
+  deleteButton.addEventListener('click', deleteTask);
 
-    //Each elements, needs appending
-    checkBox.type="checkbox";
-    editInput.type="text";
-    editInput.className="task";
-
-    editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
-
-    deleteButton.className="delete";
-    deleteButtonImg.src='./remove.svg';
-    deleteButton.appendChild(deleteButtonImg);
-
-
-    //and appending.
-    listItem.appendChild(checkBox);
-    listItem.appendChild(label);
-    listItem.appendChild(editInput);
-    listItem.appendChild(editButton);
-    listItem.appendChild(deleteButton);
-    return listItem;
+  wrapperTaskElement.appendChild(checkBox);
+  wrapperTaskElement.appendChild(taskName);
+  wrapperTaskElement.appendChild(editButton);
+  wrapperTaskElement.appendChild(deleteButton);
+  
+  return wrapperTaskElement;
 }
 
 
