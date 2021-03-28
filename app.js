@@ -66,32 +66,28 @@ var addTask=function() {           /* add new task for Todo*/
 
 //Edit an existing task.
 
-var editTask=function() {
+const editTask = function() {
   console.log("Edit Task...");
   console.log("Change 'edit' to 'save'");
 
+  let listItem = this.parentNode;
 
-  var listItem = this.parentNode;
-
-  var editInput = listItem.querySelector('input[type=text]');
-  var label = listItem.querySelector("label");
-  var editBtn = listItem.querySelector(".edit");
-  var containsClass = listItem.classList.contains("editMode");
+  let inputArea = listItem.querySelector('.form__input');
+  //let label = listItem.querySelector("label");
+ 
+  let formButton = listItem.querySelector('.form__button');
+  let containsIsEditButtonClass = formButton.classList.contains('isEditButton');
   //If class of the parent is .editmode
-  if(containsClass) {
-
-      //switch to .editmode
-      //label becomes the inputs value.
-      label.innerText=editInput.value;
-      editBtn.innerText="Edit";
+  if(containsIsEditButtonClass) {
+    formButton.classList.remove('isEditButton');
+    formButton.value = 'save';
+    inputArea.classList.add('form__input_edit-mode');
   }
   else {
-      editInput.value=label.innerText;
-      editBtn.innerText="Save";
+    formButton.classList.add('isEditButton');
+    formButton.value = 'edit';
+    inputArea.classList.remove('form__input_edit-mode');
   }
-
-  //toggle .editmode on the parent.
-  listItem.classList.toggle("editMode");
 };
 
 
