@@ -120,7 +120,7 @@ body {
 }
 .form__button:hover,
 .form__button:focus {
-  color: #0fc57c;
+  color: #3a3a3a;
 }
 .form__checkbox {
   margin-left: 1rem;
