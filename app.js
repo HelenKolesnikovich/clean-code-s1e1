@@ -97,29 +97,6 @@ let deleteTask = function(event) {
   formSection.removeChild(parentContainer);
 }
 
-//Mark task completed
-var taskCompleted=function(){
-    console.log("Complete Task...");
-
-    //Append the task list item to the #completed-tasks
-    var listItem=this.parentNode;
-    completedTasksHolder.appendChild(listItem);
-    bindTaskEvents(listItem, taskIncomplete);
-
-}
-
-
-var taskIncomplete=function(){
-    console.log("Incomplete Task...");
-//Mark task as incomplete.
-    //When the checkbox is unchecked
-    //Append the task list item to the #incompleteTasks.
-    var listItem=this.parentNode;
-    incompleteTaskHolder.appendChild(listItem);
-    bindTaskEvents(listItem,taskCompleted);
-}
-
-
 
 var ajaxRequest = function() {
     console.log("AJAX Request");
