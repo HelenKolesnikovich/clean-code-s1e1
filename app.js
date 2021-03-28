@@ -140,17 +140,31 @@ var taskIncomplete=function(){
 
 
 
-var ajaxRequest=function(){
+var ajaxRequest = function() {
     console.log("AJAX Request");
 }
 
 //The glue to hold it all together.
 
 
-//Set the click handler to the addTask function.
-addButton.onclick=addTask;
-addButton.addEventListener("click",addTask);
-addButton.addEventListener("click",ajaxRequest);
+//Set the click handler to the form functions.
+addButton.onclick = addTask;
+addButton.addEventListener("click", addTask);
+addButton.addEventListener("click", ajaxRequest);
+for(let i = 0; i < editButtonsCollection.length; i++)
+{
+  editButtonsCollection[i].addEventListener('click', editTask);
+}
+
+for(let i = 0; i < deleteButtonsCollection.length; i++)
+{
+  deleteButtonsCollection[i].addEventListener('click', deleteTask);
+}
+
+for(let i = 0; i < checkboxesCollection.length; i++)
+{
+  checkboxesCollection[i].addEventListener('mousedown', changeSectionToDisplay);
+}
 
 
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
