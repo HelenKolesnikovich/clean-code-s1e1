@@ -1,19 +1,68 @@
-<html>
-<HEAD><title>Todo App</title>
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="style.css" type="text/css" MEDIA="screen" charset="utf-8">
-</HEAD>
-<body>
-<div class="aaa"><img src="./eisenhower-matrix.jpg"><a class='more_inf' href="https://goal-life.com/page/method/matrix-eisenhower">Want more details&quest;</a></div>
-<div class="centered-main-page-element"><p id='topSectionForAddingElementToList'><label for="new-task">Add Item</label><div class="task-row-wrapper"><input id='new-task'class="task" type="text"><button>Add</button></div>
-</p><h3>Todo</h3>
-<ul id='incompleteTasks'>
-<li><input type='checkbox'><label class="task">Pay Bills</label><input type="text"><button class="edit">Edit</button><button class="delete"><img src="./remove.svg"></button></li>
-<li class="editMode"><input type="checkbox"><label class="task">Go Shopping</label><input type="text" value="Go Shopping" class="task"><button class='edit'>Save</button><button class="delete"><img src="./remove.svg"></button></li>
-</ul><h3>Completed</h3><ul id="completed-tasks"><li><input type="checkbox" checked><label class="task">See the Doctor</label><input type="text" class="task"><button class="edit">Edit</button><button class="delete"><img src="./remove.svg"></button>
-</li>
-</ul>
-</div>
-<script type="text/javascript" SRC="app.js"></script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" 
+          rel="stylesheet">
+    <link rel="stylesheet" href="style.css" media="screen">
+  </head>
+  <body>
+    <div class="wrapper-page">
+      <header class="header">
+        <h1 class="logo logo_hidden">eisenhower matrix</h1>
+        <figure class="header__figure">
+          <img class="header__image" src="./eisenhower-matrix.jpg" alt="eisenhower matrix image">
+          <figcaption class="header__figcaption">
+            <a class="link header__image-information" 
+                href="https://goal-life.com/page/method/matrix-eisenhower" target="_blank">Want more details?</a>
+          </figcaption>
+        </figure>
+      </header>
+      <main>
+        <form class="form" action="#" method="get">
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Add Item</legend>
+            <div class="form__line">
+              <input id="new-task" class="form__input form__input_edit-mode" type="text">
+              <input class="form__button"
+              id="add-button" type="button" value="add">
+            </div>
+          </fieldset>
+          <fieldset id="incomplete-tasks" class="form__fieldset form__incomplete-tasks">
+            <legend class="form__legend">Todo</legend>
+            <div class="form__line form__line_separated">
+              <input class="form__checkbox" type="checkbox">
+              <input class="form__input" type="text" value="Pay Bills" disabled>                   
+              <input class="form__button form__button-edit isEditButton" type="button" value="edit">
+              <input class="form__image-button" type="image" src="./remove.svg" alt="button to delete">
+            </div>
+            <div class="form__line form__line_separated">
+              <input class="form__checkbox" type="checkbox">
+              <input class="form__input" type="text" value="Go Shopping" disabled>
+              <input class="form__button form__button-edit isEditButton" type="button" value="edit">
+              <input class="form__image-button" type="image" src="./remove.svg" alt="button to delete">
+            </div>        
+          </fieldset>
+          <fieldset id="completed-tasks" class="form__fieldset form__completed-tasks">
+            <legend class="form__legend">Completed</legend>
+            <div class="form__line form__line_separated">
+              <input class="form__checkbox" type="checkbox" checked>
+              <input class="form__input form__input_completed-event" type="text" value="See the Doctor" disabled>
+              <input class="form__button form__button-edit isEditButton" type="button" value="edit">
+              <input class="form__image-button" type="image" src="./remove.svg" alt="button to delete">
+            </div>
+          </fieldset>
+        </form>
+      </main>
+      <footer class="footer">
+        <p class="footer__date-creation">29.03.2021</p>
+        <p class="footer__author-info"><a class="footer__link" href="https://github.com/HelenKolesnikovich" 
+                target="_blank" title="author page on gitHub">Elena Kolesnikovich</a></p>
+      </footer>
+    </div>    
+    <script src="app.js"></script>
+  </body>
 </html>
